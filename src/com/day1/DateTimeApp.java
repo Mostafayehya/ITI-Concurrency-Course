@@ -1,4 +1,4 @@
-package com.lecturecode;
+package com.day1;
 
 import javax.swing.*;
 import java.awt.*;
