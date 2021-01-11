@@ -46,7 +46,7 @@ public class PausableBouncingBall extends JPanel {
                 height = getHeight();
 
                 // update location
-                if(playFlag == true) {
+                if (playFlag == true) {
                     X = X + dx;
                     Y = Y + dy;
                 }
@@ -81,9 +81,10 @@ public class PausableBouncingBall extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-            g.drawImage(img, (int) (X - radius), (int) (Y - radius), (int) diameter, (int) diameter, (image, i, i1, i2, i3, i4) -> true);
+        g.drawImage(img, (int) (X - radius), (int) (Y - radius), (int) diameter, (int) diameter, (image, i, i1, i2, i3, i4) -> true);
 
     }
+
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("Bouncing Ball");

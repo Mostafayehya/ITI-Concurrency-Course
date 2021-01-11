@@ -15,6 +15,7 @@ public class TextBannerApp extends JFrame implements Runnable {
         this.setTitle("Banner Application :)");
      //   marquee.setHorizontalAlignment(JLabel.CENTER);
 
+        marquee.setText(message);
         this.add(marquee);
         thread = new Thread(this);
         thread.start();
@@ -30,7 +31,7 @@ public class TextBannerApp extends JFrame implements Runnable {
     public void run() {
         // Add motion logic here
         while (true) {
-            marquee.setIcon(icon);
+       //     marquee.setIcon(icon);
             marquee.setLocation(marquee.getX() + 10, marquee.getY());
 
             System.out.println("x= " + marquee.getX());
