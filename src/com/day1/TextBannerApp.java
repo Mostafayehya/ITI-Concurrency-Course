@@ -8,12 +8,14 @@ public class TextBannerApp extends JFrame implements Runnable {
     Thread thread;
     String message = "Concurrency Rocks!!";
     JLabel marquee = new JLabel();
+    ImageIcon icon = new ImageIcon(new ImageIcon("src/com/day1/smallball.png").getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
+
 
     public TextBannerApp() {
         this.setTitle("Banner Application :)");
-        marquee.setHorizontalAlignment(JLabel.CENTER);
-        marquee.setText(message);
-        this.add(marquee, BorderLayout.CENTER);
+     //   marquee.setHorizontalAlignment(JLabel.CENTER);
+
+        this.add(marquee);
         thread = new Thread(this);
         thread.start();
     }
@@ -28,10 +30,13 @@ public class TextBannerApp extends JFrame implements Runnable {
     public void run() {
         // Add motion logic here
         while (true) {
-            marquee.setText(message);
+            marquee.setIcon(icon);
             marquee.setLocation(marquee.getX() + 10, marquee.getY());
-            if (marquee.getX() == (this.getWidth() / 2)) {
-                marquee.setLocation(-this.getWidth() / 2, marquee.getY());
+
+            System.out.println("x= " + marquee.getX());
+            if (marquee.getX() > this.getWidth()) {
+                marquee.setLocation(0, marquee.getY());
+
             }
             try {
                 Thread.sleep(100);
